@@ -1,0 +1,14 @@
+[Unit]
+Description=Dummy Service - A simple background service for learning systemd
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/dummy.sh
+Restart=always
+RestartSec=5
+StandardOutput=Journal
+StandardError=Journal
+
+[Install]
+WantedBy=multi-user.target
